@@ -1,0 +1,16 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\Robot Tracking\ftlRobotGatherer.cs">
+    <Files>
+      <File FileName="Assets\scripts\Serial Communication\XBee.cs" Line="74" Column="4" />
+      <File FileName="Assets\scripts\ftlRobotManager.cs" Line="12" Column="16" />
+      <File FileName="Assets\scripts\Serial Communication\UnitySerialPort.cs" Line="338" Column="14" />
+      <File FileName="Assets\scripts\Serial Communication\XBeeEventArgs.cs" Line="11" Column="2" />
+      <File FileName="Assets\scripts\Robot Tracking\ftlRobotGatherer.cs" Line="136" Column="32" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
