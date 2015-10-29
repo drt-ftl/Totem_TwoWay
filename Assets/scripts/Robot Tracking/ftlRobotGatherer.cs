@@ -251,6 +251,34 @@ public class ftlRobotGatherer : ftlRobotManager
 
     #region Event handlers
 
+    unsafe static byte[] convertBytes (Vector2 _pos, Vector2 _vel, float _ang)
+    {
+        var x = (int)_pos.x;
+        byte* xSplit = (byte*)&x;
+        var y = (int)_pos.y;
+        byte* ySplit = (byte*)&y;
+        var xv = (int)(_vel.x * 100); // Multiply velocity and angle by 100 to get 2 decimal places
+        byte* xvSplit = (byte*)&xv;
+        var yv = (int)(_vel.y * 100);
+        byte* yvSplit = (byte*)&yv;
+        var a = (int)(_ang * 100);
+        byte* aSplit = (byte*)&a;
+
+        byte[] bytes = new byte[12];      
+        bytes[0] = xSplit[0];
+        bytes[1] = xSplit[1];
+        bytes[2] = ySplit[0];
+        bytes[3] = ySplit[1];
+        bytes[4] = xvSplit[0];
+        bytes[5] = xvSplit[1];
+        bytes[6] = xvSplit[2];
+        bytes[7] = yvSplit[0];
+        bytes[8] = yvSplit[1];
+        bytes[9] = yvSplit[2];
+        bytes[10] = aSplit[0];
+        bytes[11] = aSplit[1];
+        return bytes;
+    }
     void LineIn(byte[] bytes)
     {
         XBeeManager.unitySerialPort.SerialPort.DiscardInBuffer();
@@ -260,14 +288,16 @@ public class ftlRobotGatherer : ftlRobotManager
         var newTotemPacket = new TotemInputPacket();
         newTotemPacket.TotemString = line;
         inputPackets.Add(newTotemPacket);
+
         if (XBeeManager.unitySerialPort.SerialPort.IsOpen && robots.Count >= 1)
         {
-            XBeeManager.unitySerialPort.SendSerialDataAsLine("0,"
-                                                             + ang.ToString("f2") + ","
-                                                             + ((int)pos.x).ToString() + ","
-                                                             + ((int)pos.y).ToString() + ","
-                                                             + vel.x.ToString("f2") + ","
-                                                             + vel.y.ToString("f2"));
+            //XBeeManager.unitySerialPort.SendSerialDataAsLine("0,"
+            //                                                 + ang.ToString("f2") + ","
+            //                                                 + ((int)pos.x).ToString() + ","
+            //                                                 + ((int)pos.y).ToString() + ","
+            //                                                 + vel.x.ToString("f2") + ","
+            //                                                 + vel.y.ToString("f2"));
+            XBeeManager.unitySerialPort.SendSerialDataAsDelimitedByteChunk(convertBytes(pos, vel, ang));
         }
     }
 

@@ -270,15 +270,16 @@ public class UnitySerialPort
                 newByteArray[0] = newByte;
                 XBeeManager.XBeeDataIn(newByteArray);
                 
-                if (newByte != 124) // Pipe Character
+                if (currentBytesIn.Count < 7)
+                //if (newByte != 124) // Pipe Character
                 {
                     currentBytesIn.Add(newByte);
                 }
                 else
                 {
                     var b = currentBytesIn.ToArray();
-                    XBeeManager.XBeeLineIn(b);
                     currentBytesIn.Clear();
+                    XBeeManager.XBeeLineIn(b);
                 }
             }
         }

@@ -27,3 +27,32 @@ C:\Users\David\Dropbox (FTL Labs Corporation)\Robo 60 hz 1 way\Temp\bin\Debug\Un
 C:\Users\David\Dropbox (FTL Labs Corporation)\Robo 60 hz 1 way\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
 C:\Users\David\Dropbox (FTL Labs Corporation)\Robo 60 hz 1 way\obj\Debug\Assembly-CSharp.dll
 C:\Users\David\Dropbox (FTL Labs Corporation)\Robo 60 hz 1 way\obj\Debug\Assembly-CSharp.pdb
+C:\Users\David\Documents\GitHub\Totem_TwoWay\Temp\bin\Debug\Assembly-CSharp.dll
+C:\Users\David\Documents\GitHub\Totem_TwoWay\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\David\Documents\GitHub\Totem_TwoWay\Temp\bin\Debug\OSCsharp.dll
+C:\Users\David\Documents\GitHub\Totem_TwoWay\Temp\bin\Debug\System.Windows.Forms.dll
+C:\Users\David\Documents\GitHub\Totem_TwoWay\Temp\bin\Debug\TouchScript.dll
+C:\Users\David\Documents\GitHub\Totem_TwoWay\Temp\bin\Debug\TouchScript.TUIO.dll
+C:\Users\David\Documents\GitHub\Totem_TwoWay\Temp\bin\Debug\TouchScript.Windows.dll
+C:\Users\David\Documents\GitHub\Totem_TwoWay\Temp\bin\Debug\TUIOsharp.dll
+C:\Users\David\Documents\GitHub\Totem_TwoWay\Temp\bin\Debug\UnityEditor.dll
+C:\Users\David\Documents\GitHub\Totem_TwoWay\Temp\bin\Debug\UnityEditor.iOS.Extensions.Xcode.dll
+C:\Users\David\Documents\GitHub\Totem_TwoWay\Temp\bin\Debug\UnityEngine.Analytics.dll
+C:\Users\David\Documents\GitHub\Totem_TwoWay\Temp\bin\Debug\UnityEngine.dll
+C:\Users\David\Documents\GitHub\Totem_TwoWay\Temp\bin\Debug\UnityEngine.Networking.dll
+C:\Users\David\Documents\GitHub\Totem_TwoWay\Temp\bin\Debug\UnityEngine.UI.dll
+C:\Users\David\Documents\GitHub\Totem_TwoWay\Temp\bin\Debug\Mono.Cecil.dll
+C:\Users\David\Documents\GitHub\Totem_TwoWay\Temp\bin\Debug\Unity.SerializationLogic.dll
+C:\Users\David\Documents\GitHub\Totem_TwoWay\Temp\bin\Debug\Unity.DataContract.dll
+C:\Users\David\Documents\GitHub\Totem_TwoWay\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+C:\Users\David\Documents\GitHub\Totem_TwoWay\Temp\bin\Debug\Unity.UNetWeaver.dll
+C:\Users\David\Documents\GitHub\Totem_TwoWay\Temp\bin\Debug\Unity.CecilTools.dll
+C:\Users\David\Documents\GitHub\Totem_TwoWay\Temp\bin\Debug\Mono.Cecil.Pdb.dll
+C:\Users\David\Documents\GitHub\Totem_TwoWay\Temp\bin\Debug\Mono.Cecil.Mdb.dll
+C:\Users\David\Documents\GitHub\Totem_TwoWay\Temp\bin\Debug\UnityEngine.xml
+C:\Users\David\Documents\GitHub\Totem_TwoWay\Temp\bin\Debug\UnityEditor.xml
+C:\Users\David\Documents\GitHub\Totem_TwoWay\Temp\bin\Debug\UnityEngine.UI.xml
+C:\Users\David\Documents\GitHub\Totem_TwoWay\Temp\bin\Debug\UnityEngine.Networking.xml
+C:\Users\David\Documents\GitHub\Totem_TwoWay\Temp\bin\Debug\UnityEngine.Analytics.xml
+C:\Users\David\Documents\GitHub\Totem_TwoWay\obj\Debug\Assembly-CSharp.dll
+C:\Users\David\Documents\GitHub\Totem_TwoWay\obj\Debug\Assembly-CSharp.pdb

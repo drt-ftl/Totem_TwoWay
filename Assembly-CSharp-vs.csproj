@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{BA053C0C-0D6F-C23C-D840-5B3AE0E6D4C9}</ProjectGuid>
+	<ProjectGuid>{3B3CA86F-0079-9968-6822-ADC4D0A06AEA}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -67,22 +67,22 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="System.Windows.Forms">
- <HintPath>C:/Users/David/Dropbox (FTL Labs Corporation)/Robo 60 hz 1 way/Assets/System.Windows.Forms.dll</HintPath>
+ <HintPath>C:/Users/David/Documents/GitHub/Totem_TwoWay/Assets/System.Windows.Forms.dll</HintPath>
  </Reference>
  <Reference Include="OSCsharp">
- <HintPath>C:/Users/David/Dropbox (FTL Labs Corporation)/Robo 60 hz 1 way/Assets/scripts/TouchScript/OSCsharp.dll</HintPath>
+ <HintPath>C:/Users/David/Documents/GitHub/Totem_TwoWay/Assets/scripts/TouchScript/OSCsharp.dll</HintPath>
  </Reference>
  <Reference Include="TouchScript">
- <HintPath>C:/Users/David/Dropbox (FTL Labs Corporation)/Robo 60 hz 1 way/Assets/scripts/TouchScript/TouchScript.dll</HintPath>
+ <HintPath>C:/Users/David/Documents/GitHub/Totem_TwoWay/Assets/scripts/TouchScript/TouchScript.dll</HintPath>
  </Reference>
  <Reference Include="TouchScript.TUIO">
- <HintPath>C:/Users/David/Dropbox (FTL Labs Corporation)/Robo 60 hz 1 way/Assets/scripts/TouchScript/TouchScript.TUIO.dll</HintPath>
+ <HintPath>C:/Users/David/Documents/GitHub/Totem_TwoWay/Assets/scripts/TouchScript/TouchScript.TUIO.dll</HintPath>
  </Reference>
  <Reference Include="TouchScript.Windows">
- <HintPath>C:/Users/David/Dropbox (FTL Labs Corporation)/Robo 60 hz 1 way/Assets/scripts/TouchScript/TouchScript.Windows.dll</HintPath>
+ <HintPath>C:/Users/David/Documents/GitHub/Totem_TwoWay/Assets/scripts/TouchScript/TouchScript.Windows.dll</HintPath>
  </Reference>
  <Reference Include="TUIOsharp">
- <HintPath>C:/Users/David/Dropbox (FTL Labs Corporation)/Robo 60 hz 1 way/Assets/scripts/TouchScript/TUIOsharp.dll</HintPath>
+ <HintPath>C:/Users/David/Documents/GitHub/Totem_TwoWay/Assets/scripts/TouchScript/TUIOsharp.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
