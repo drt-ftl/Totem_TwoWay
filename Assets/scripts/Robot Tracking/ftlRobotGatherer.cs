@@ -233,7 +233,7 @@ public class ftlRobotGatherer : ftlRobotManager
         if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
         {
             var tw = File.CreateText(saveFileDialog.FileName);
-            tw.WriteLine("Position(X),Position(Y),Farce Magnitude,Force Angle");
+            tw.WriteLine("Wheel Angle,Force Magnitude,Force Angle,Position(X),Position(Y),Velocity(X),Velocity(Y), Angle");
             foreach (var ip in inputPackets)
             {
                 tw.WriteLine(ip.TotemString);
@@ -285,22 +285,23 @@ public class ftlRobotGatherer : ftlRobotManager
     {
         XBeeManager.unitySerialPort.SerialPort.DiscardInBuffer();
         var newTotemPacket = new TotemInputPacket();
-        var xHigh = bytes[0];
-        var xLow = bytes[1];
-        var x = xLow + xHigh * 256;
-        var yHigh = bytes[2];
-        var yLow = bytes[3];
-        var y = yLow + yHigh * 256;
-        var fMagHigh = bytes[4];
-        var fMagLow = bytes[5];
+        var waHigh = bytes[0];
+        var waLow = bytes[1];
+        var wa = (waLow + waHigh * 256) / 100f;
+        var fMagHigh = bytes[2];
+        var fMagLow = bytes[3];
         var fMag = (fMagLow + fMagHigh * 256) / 100f;
-        var fAngHigh = bytes[6];
-        var fAngLow = bytes[7];
+        var fAngHigh = bytes[4];
+        var fAngLow = bytes[5];
         var fAng = (fAngLow + fAngHigh * 256) / 100f;
-        var line = x.ToString() + ","
-            + y.ToString() + ","
-            + fMag.ToString() + ","
-            + fAng.ToString();
+        var line = wa.ToString("f2") + ","
+            + fMag.ToString("f2") + ","
+            + fAng.ToString("f2") + ","
+            + pos.x.ToString("f2") + ","
+            + pos.y.ToString("f2") + ","
+            + vel.x.ToString("f2") + ","
+            + vel.y.ToString("f2") + ","
+            + ang.ToString("f2") + ",";
         newTotemPacket.TotemString = line;
         inputPackets.Add(newTotemPacket);
 
