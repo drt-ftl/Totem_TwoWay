@@ -23,7 +23,7 @@ public class ftlRobotGatherer : ftlRobotManager
 	private string instructions;
 	public Material mat;
 	public Vector2 minMaxAngles;
-	private System.Timers.Timer _timer1;
+	//private System.Timers.Timer _timer1;
 	private Vector2 worldToScreenRatio = new Vector2();
 	private Vector2 pos = new Vector2();
 	private Vector2 vel = new Vector2();
@@ -38,7 +38,7 @@ public class ftlRobotGatherer : ftlRobotManager
     private static extern void ShowDialog();
     [DllImport("user32.dll")]
     private static extern void SaveFileDialog();
-    public List<TotemInputPacket> inputPackets = new List<TotemInputPacket>();
+    public static List<TotemInputPacket> inputPackets = new List<TotemInputPacket>();
     bool show = true;
 
 
@@ -78,10 +78,10 @@ public class ftlRobotGatherer : ftlRobotManager
 				"Blue: Small Marker \r\n" +
 				"Yellow: Centerline";
 		
-		_timer1 = new System.Timers.Timer (1000);
-		_timer1.Elapsed += new System.Timers.ElapsedEventHandler (unity_Tick);
-		_timer1.Enabled = true;
-		_timer1.Start ();
+		//_timer1 = new System.Timers.Timer (1000);
+		//_timer1.Elapsed += new System.Timers.ElapsedEventHandler (unity_Tick);
+		//_timer1.Enabled = true;
+		//_timer1.Start ();
 		
 	}
 	
@@ -233,9 +233,11 @@ public class ftlRobotGatherer : ftlRobotManager
         if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
         {
             var tw = File.CreateText(saveFileDialog.FileName);
-            tw.WriteLine("Force Magnitude, Force Angle, Position(X), Position(Y)");
+            tw.WriteLine("Position(X),Position(Y),Farce Magnitude,Force Angle");
             foreach (var ip in inputPackets)
-                tw.WriteLine(ip.TotemString); 
+            {
+                tw.WriteLine(ip.TotemString);
+            }
             tw.Close();
             inputPackets.Clear();
         }
@@ -282,21 +284,28 @@ public class ftlRobotGatherer : ftlRobotManager
     void LineIn(byte[] bytes)
     {
         XBeeManager.unitySerialPort.SerialPort.DiscardInBuffer();
-        var line = System.Text.Encoding.ASCII.GetString(bytes);
-        print(line);
-        //var chunks = line.Split(',');
         var newTotemPacket = new TotemInputPacket();
+        var xHigh = bytes[0];
+        var xLow = bytes[1];
+        var x = xLow + xHigh * 256;
+        var yHigh = bytes[2];
+        var yLow = bytes[3];
+        var y = yLow + yHigh * 256;
+        var fMagHigh = bytes[4];
+        var fMagLow = bytes[5];
+        var fMag = (fMagLow + fMagHigh * 256) / 100f;
+        var fAngHigh = bytes[6];
+        var fAngLow = bytes[7];
+        var fAng = (fAngLow + fAngHigh * 256) / 100f;
+        var line = x.ToString() + ","
+            + y.ToString() + ","
+            + fMag.ToString() + ","
+            + fAng.ToString();
         newTotemPacket.TotemString = line;
         inputPackets.Add(newTotemPacket);
 
         if (XBeeManager.unitySerialPort.SerialPort.IsOpen && robots.Count >= 1)
         {
-            //XBeeManager.unitySerialPort.SendSerialDataAsLine("0,"
-            //                                                 + ang.ToString("f2") + ","
-            //                                                 + ((int)pos.x).ToString() + ","
-            //                                                 + ((int)pos.y).ToString() + ","
-            //                                                 + vel.x.ToString("f2") + ","
-            //                                                 + vel.y.ToString("f2"));
             XBeeManager.unitySerialPort.SendSerialDataAsDelimitedByteChunk(convertBytes(pos, vel, ang));
         }
     }
@@ -390,7 +399,7 @@ public class ftlRobotGatherer : ftlRobotManager
 	
 	#endregion
 	
-	private void unity_Tick(object sender,  System.Timers.ElapsedEventArgs e)
-    { 
-    }
+	//private void unity_Tick(object sender,  System.Timers.ElapsedEventArgs e)
+ //   { 
+ //   }
 }

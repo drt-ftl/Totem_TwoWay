@@ -57,12 +57,10 @@ public class ftlRobotDefiner : ftlRobotManager
 	
     void DataIn(byte[] bytes)
     {
-        //print("BytesIn!");
     }
 
     void LineIn(byte[] bytes)
     {
-        //print("BytesIn!");
     }
 
     private void updateTouch(ITouch _touch)
